@@ -1,5 +1,24 @@
 @startuml
 'https://plantuml.com/object-diagram
 
+object Animals
+object StartMenu
+object HomeMenu
+object Jobs
+object Dog
+object LogIn
+object Cat
+object Rabbit
+object AnimalNames
+
+StartMenu *-- LogIn
+LogIn *-- HomeMenu
+HomeMenu *-- Animals
+HomeMenu *-- Jobs
+HomeMenu *-- AnimalNames
+Animals <|-- Dog
+Animals <|-- Rabbit
+Animals <|-- Cat
+
 
 @enduml
