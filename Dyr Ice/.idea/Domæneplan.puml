@@ -1,5 +1,6 @@
   @startuml
 'https://plantuml.com/object-diagram
+!pragma layout smetana
 
 object Animals
 object StartMenu
@@ -19,6 +20,5 @@ HomeMenu *-- AnimalNames
 Animals <|-- Dog
 Animals <|-- Rabbit
 Animals <|-- Cat
-
 
 @enduml
