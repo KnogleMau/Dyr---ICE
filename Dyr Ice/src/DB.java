@@ -32,6 +32,27 @@ public class DB {
         return data;
     }
 
+    public ArrayList<String> selectDogs(){
+        ArrayList<String> dogData = new ArrayList<>();
+        String sql = "SELECT id, species, cost, lifespan, temper, AllergyFriendly FROM Dog";
+
+        try {
+            Statement stm = con.createStatement();
+
+            ResultSet rs = stm.executeQuery(sql);
+
+            while (rs.next()) {
+                String row = rs.getInt("id") + " , " + rs.getString("species") + " , " +
+                        rs.getString("cost") + " , " + rs.getInt("lifespan") + " , " +
+                        rs.getString("temper") + " , " + rs.getString("AllergyFriendly");
+                dogData.add(row);
+            }
+        }catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+        return dogData;
+    }
+
 
 
 }
