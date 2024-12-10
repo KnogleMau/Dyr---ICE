@@ -1,6 +1,6 @@
 public class HomeMenu {
     private TextUI ui = new TextUI();
-    
+
     public void displayMenu(){
         int choice = ui.promptNumeric("Type a number:");
 
