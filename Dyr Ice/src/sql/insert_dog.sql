@@ -102,7 +102,7 @@ INSERT INTO Dog(id,species,cost,lifespan,temper,allergyFriendly) VALUES (101, 'B
 INSERT INTO Dog(id,species,cost,lifespan,temper,allergyFriendly) VALUES (102, 'Wire Fox Terrier', '$1500-$3000', '12-14', 'Quick, Keen, Friendly, Fearless', 'True');
 INSERT INTO Dog(id,species,cost,lifespan,temper,allergyFriendly) VALUES (103, 'Flat-Coated Retriever', '$1500-$3000', '10-13', 'Optimistic, Outgoing, Devoted, Confident', 'False');
 INSERT INTO Dog(id,species,cost,lifespan,temper,allergyFriendly) VALUES (104, 'Belgian Tervuren', '$1500-$2000', '10-12', 'Intelligent, Loyal, Energetic, Protective', 'False');
-INSERT INTO Dog(id,species,cost,lifespan,temper,allergyFriendly) VALUES (105, 'Japanese Chin', '$1500-$2500', 'Loving, Cat-Like, Loyal, Intelligent', 'False');
+INSERT INTO Dog(id,species,cost,lifespan,temper,allergyFriendly) VALUES (105, 'Japanese Chin', '$1500-$2500', '10-12','Loving, Cat-Like, Loyal, Intelligent', 'False');
 INSERT INTO Dog(id,species,cost,lifespan,temper,allergyFriendly) VALUES (106, 'Tibetan Terrier', '$1500-$2500', '12-15', 'Energetic, Sensitive, Reserved, Amiable', 'True');
 INSERT INTO Dog(id,species,cost,lifespan,temper,allergyFriendly) VALUES (107, 'Pointer', '$1000-$1500', '12-15', 'Even Tempered, Amiable, Loyal, Kind', 'False');
 INSERT INTO Dog(id,species,cost,lifespan,temper,allergyFriendly) VALUES (108, 'Toy Fox Terrier', '$1000-$1800', '13-14', 'Spirited, Friendly, Playful, Loyal', 'False');
@@ -157,7 +157,7 @@ INSERT INTO Dog(id,species,cost,lifespan,temper,allergyFriendly) VALUES (156, 'C
 INSERT INTO Dog(id,species,cost,lifespan,temper,allergyFriendly) VALUES (157, 'Field Spaniel', '$2000-$5000', '11-15','Sociable, Docile, Sensitive, Familial', 'False');
 INSERT INTO Dog(id,species,cost,lifespan,temper,allergyFriendly) VALUES (158, 'Redbone Coonhound', '$500-$800','12-14', 'Familial, Energetic, Companionable, Unflappable', 'False');
 INSERT INTO Dog(id,species,cost,lifespan,temper,allergyFriendly) VALUES (159, 'Treeing Walker Coonhound', '$400-$800', '12-13', 'Loving, Affectionate, Clever, Trainable', 'False');
-INSERT INTO Dog(id,species,cost,lifespan,temper,allergyFriendly) VALUES (160, 'Swedish Vallhund', '$1500-$2300', 'Friendly, Watchful, Fearless, Energetic', 'False');
+INSERT INTO Dog(id,species,cost,lifespan,temper,allergyFriendly) VALUES (160, 'Swedish Vallhund', '$1500-$2300', '12-14','Friendly, Watchful, Fearless, Energetic', 'False');
 INSERT INTO Dog(id,species,cost,lifespan,temper,allergyFriendly) VALUES (161, 'Puli', '$1500-$2500', '12-16', 'Faithful, Energetic, Intelligent, Loyal', 'True');
 INSERT INTO Dog(id,species,cost,lifespan,temper,allergyFriendly) VALUES (162, 'Entlebucher Mountain Dog', '$800-$1500', '10-15', 'Agile, Independent, Devoted, Loyal', 'False');
 INSERT INTO Dog(id,species,cost,lifespan,temper,allergyFriendly) VALUES (163, 'Spanish Water Dog', '$1500-$2500', '10-14', 'Diligent, Trainable, Loyal, Athletic', 'True');
