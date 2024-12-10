@@ -7,12 +7,13 @@ CREATE TABLE Dog
     cost INTEGER default 0,
     lifespan INTEGER default 0,
     temper text (100),
-    allergyFriendly boolean not null,
+    allergyFriendly boolean not null
 
 );
 
 DROP TABLE IF EXISTS Cat;
-create table Cat(
+create table Cat
+(
    id integer primary key,
    species varchar(50) not null ,
    origin varchar(50) not null,
@@ -20,3 +21,4 @@ create table Cat(
    temper text not null,
    allergyFriendly boolean not null
 );
+
