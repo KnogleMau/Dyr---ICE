@@ -21,4 +21,21 @@ public class TextUI {
         }
         return numbers;
     }
+
+    public boolean promptBinary(String msg){
+        String input = promptText(msg);
+        if(input.equalsIgnoreCase("Y")){
+            return true;
+        }
+        else if(input.equalsIgnoreCase("N")){
+            return false;
+        }
+        return promptBinary(msg);
+    }
+
+    public String promptText(String msg){
+        System.out.println(msg);//Stille brugeren et spørgsmål
+        String input = scan.nextLine();
+        return input;
+    }
 }
