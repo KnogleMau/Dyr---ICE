@@ -1,5 +1,6 @@
 DROP TABLE IF EXISTS Dog;
-
+DROP TABLE IF EXISTS Login;
+DROP TABLE IF EXISTS Cat;
 CREATE TABLE Dog
 (
     id integer primary key,
@@ -22,14 +23,13 @@ create table Cat
    allergyFriendly boolean not null
 );
 
-DROP TABLE IF EXISTS Job;
-CREATE TABLE Job
+
+create table LogIn
 (
-    id integer primary key,
-    username varchar(25) not null,
-    description TEXT not null,
-    salaryHour INTEGER default 0,
-    location varchar(50) not null,
-    takerName varchar(25)
+    id integer default 0 primary key,
+    username varchar(30) ,
+    password varchar(30) not null
+
 
 );
+
