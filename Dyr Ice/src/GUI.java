@@ -6,11 +6,13 @@ import java.awt.event.ActionListener;
 
 public class GUI implements ActionListener {
     private final HomeMenu HomeMenu;
+    private final Login Login;
     private JFrame frame;
     private JFrame loginFrame;
 
     public GUI(){
         HomeMenu = new HomeMenu();
+        Login = new Login();
         GUIstart();
     }
 
@@ -73,6 +75,7 @@ public class GUI implements ActionListener {
 
         if("createProfile".equals(action)){
             HomeMenu.displayMenu();
+            //Login.createUser();
         }else if("Login".equals(action)){
             //Login.login();
             //System.out.println("Loging function is under construction");
@@ -81,7 +84,7 @@ public class GUI implements ActionListener {
         }else if("loginFailed".equals(action)){
             loginFrame.dispose();
             GUIstart();
-        }
+        }//ends if-statement
     }
 
 }
