@@ -28,7 +28,7 @@ CREATE TABLE Job
     id integer primary key,
     username varchar(25) not null,
     description TEXT not null,
-    salaryHour integer not null,
+    salaryHour INTEGER default 0,
     location varchar(50) not null,
     takerName varchar(25)
 
