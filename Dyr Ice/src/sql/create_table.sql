@@ -23,8 +23,20 @@ create table Cat
    allergyFriendly boolean not null
 );
 
+DROP TABLE IF EXISTS Job;
+CREATE TABLE Job
+(
+    id          INTEGER primary key,
+    username    varchar(25),
+    description TEXT not null,
+    salaryHour  INTEGER default 0,
+    location    varchar(50),
+    takerName   varchar(25)
+);
 
-create table LogIn
+
+DROP TABLE IF EXISTS LogIn;
+CREATE TABLE LogIn
 (
     id integer default 0 primary key,
     username varchar(30) ,
