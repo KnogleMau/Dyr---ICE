@@ -1,7 +1,6 @@
 DROP TABLE IF EXISTS Dog;
-DROP TABLE IF EXISTS Login;
-DROP TABLE IF EXISTS Cat;
 CREATE TABLE Dog
+
 (
     id integer primary key,
     species varchar(50) not null,
@@ -27,11 +26,13 @@ DROP TABLE IF EXISTS Job;
 CREATE TABLE Job
 (
     id          INTEGER primary key,
-    username    varchar(25),
+    headline    varchar(50),
     description TEXT not null,
     salaryHour  INTEGER default 0,
     location    varchar(50),
+    username    varchar(25),
     takerName   varchar(25)
+
 );
 
 

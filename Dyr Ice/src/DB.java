@@ -130,6 +130,28 @@ public class DB {
         }
         return false;
     }
+
+    public String MakeJobs(String headline, String description, int salaryHour, String location, String takerName){
+        String insertSQL = "INSERT INTO Job(headline, description, salaryHour, location, takerName) VALUES (?,?,?,?,?)";
+    try{
+        PreparedStatement preparedStatement = con.prepareStatement(insertSQL);
+        {
+
+            preparedStatement.setString(1,headline);
+            preparedStatement.setString(2,description);
+            preparedStatement.setInt(3,salaryHour);
+            preparedStatement.setString(4, location);
+            preparedStatement.setString(5,takerName);
+
+
+            int rowsAffected = preparedStatement.executeUpdate();
+            System.out.println("Rows inserted: " + rowsAffected);
+        }
+
+    }catch(SQLException e){
+        e.getMessage();
+        }
+    }
 }
 
 
