@@ -131,8 +131,8 @@ public class DB {
         return false;
     }
 
-    public String MakeJobs(String headline, String description, int salaryHour, String location, String takerName){
-        String insertSQL = "INSERT INTO Job(headline, description, salaryHour, location, takerName) VALUES (?,?,?,?,?)";
+    public String MakeJobs(String headline, String description, int salaryHour, String location){
+        String insertSQL = "INSERT INTO Job(headline, description, salaryHour, location) VALUES (?,?,?,?,)";
     try{
         PreparedStatement preparedStatement = con.prepareStatement(insertSQL);
         {
@@ -141,7 +141,6 @@ public class DB {
             preparedStatement.setString(2,description);
             preparedStatement.setInt(3,salaryHour);
             preparedStatement.setString(4, location);
-            preparedStatement.setString(5,takerName);
 
 
             int rowsAffected = preparedStatement.executeUpdate();
@@ -151,6 +150,7 @@ public class DB {
     }catch(SQLException e){
         e.getMessage();
         }
+        return insertSQL;
     }
 }
 
