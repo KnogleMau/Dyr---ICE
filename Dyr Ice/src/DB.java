@@ -69,15 +69,13 @@ public class DB {
                 String passwordTarget = rs.getString("password");
                 if (usernameInput.equals(userTarget)) {
                     if (passwordInput.equals(passwordTarget)) {
-                        System.out.println("Login Vellykket");
+                        System.out.println("Login Succesful");
                         return "Login Vellykket";
                     } else {
-                        System.out.println("login fejllykket");
+                        System.out.println("Login failed");
                         return "Wrong password";
                     }
                 }
-                System.out.println("Username not found");
-                return "Username not found";
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
