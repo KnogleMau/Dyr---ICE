@@ -5,7 +5,7 @@ public class Login {
 
 
     public void loginOption(){
-        var url = "jdbc:sqlite:C:\\Users\\Mavso\\OneDrive\\Skrivebord\\Dyr---ICE\\Dyr Ice\\Fanimals";
+        var url = "jdbc:sqlite:C:\\Users\\Mavso\\IdeaProjects\\Dyr ice ice ice 2\\Fanimals";
         db.connect(url);
 
         String usernameInput1 = ui.promptText("username");
@@ -14,7 +14,7 @@ public class Login {
     }
 
     public void createUser() {
-        var url = "jdbc:sqlite:C:\\Users\\Mavso\\OneDrive\\Skrivebord\\Dyr---ICE\\Dyr Ice\\Fanimals";
+        var url = "jdbc:sqlite:C:\\Users\\Mavso\\IdeaProjects\\Dyr ice ice ice 2\\Fanimals";
         db.connect(url);
 
      boolean input =   ui.promptBinary("Vil du gerne lave en Bruger?" + "Y/N");

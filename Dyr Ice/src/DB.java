@@ -7,7 +7,7 @@ public class DB {
     public void connect(String url) {
         try {
             con = DriverManager.getConnection(url);
-            System.out.println("connected");
+            System.out.println("connected ");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
