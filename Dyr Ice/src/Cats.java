@@ -10,10 +10,10 @@ public class Cats extends Animal {
     }
 
     public String toString() {
-        return " species: " + this.species +
-                " origin: " + this.origin +
-                " lifeSpan: " + this.lifeSpan +
-                " temper: " + this.temper +
-                " allergyFriendly: " + this.AllergyFriendly;
+        return  " Species: " + this.species + " ;" +
+                " Origin: " + this.origin + " ;" +
+                " LifeSpan: " + this.lifeSpan + " ;" +
+                " Temper: " + this.temper + " ;" +
+                " AllergyFriendly: " + this.AllergyFriendly;
     }
 }
