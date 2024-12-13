@@ -4,6 +4,7 @@ public class HomeMenu {
     private TextUI ui = new TextUI();
     DB db = new DB();
     public ArrayList<Cats> cats;
+    public ArrayList<Dogs> dogs;
 
     public void displayMenu() {
         int choice = ui.promptNumeric("Type a number:");
@@ -72,5 +73,46 @@ public class HomeMenu {
         }
     }
 
+    public ArrayList<String> readDogsList(){
+        var url = "jdbc:sqlite:/Users/petermarcher/Desktop/Java 1/Dyr---ICE/Untitled";
+        db.connect(url);
+        ArrayList<String> dogsList = db.selectDogs();
+        return dogsList;
+    }
 
+    public ArrayList<Dogs> createDogList(ArrayList<String> dogList) {
+        dogs = new ArrayList<>();
+        for (int i = 0; i < dogList.size(); i++) {
+            String line = dogList.get(i);
+
+            if (!line.isEmpty() && line.contains(";")) {
+                String[] parameters = line.split(";");
+                if (parameters.length == 5) {
+                    try {
+                        String species = parameters[0].trim();
+                        int cost = Integer.parseInt(parameters[1].trim());
+                        int lifespan = Integer.parseInt(parameters[2].trim());
+                        String temper = parameters[3].trim();
+                        String allergyFriendly = parameters[4].trim();
+
+                        Dogs d = new Dogs(species, cost, lifespan, temper, allergyFriendly);
+                        this.dogs.add(d);
+                    } catch (NumberFormatException e) {
+                        System.out.println("failed parsing in the line: ");
+                    }
+                }
+            }
+        }
+        return dogs;
+    }
+
+    public void printDogsList() {
+        if (!dogs.isEmpty()) {
+            for (Dogs d : dogs) {
+                System.out.println(d);
+            }
+        } else {
+            System.out.println("no dogs shows");
+        }
+    }
 }
