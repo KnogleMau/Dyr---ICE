@@ -23,9 +23,9 @@ public class DB {
             ResultSet rs = stm.executeQuery(sql);
 
             while (rs.next()) {
-                String row = rs.getInt("id") + " , " + rs.getString("species") + " , " +
-                        rs.getString("origin") + " , " + rs.getInt("lifeSpan") + " , " +
-                        rs.getString("temper") + " , " + rs.getString("AllergyFriendly");
+                String row =  rs.getString("species") + " ; " +
+                        rs.getString("origin") + " ; " + rs.getInt("lifeSpan") + " ; " +
+                        rs.getString("temper") + " ; " + rs.getString("AllergyFriendly");
                 data.add(row);
             }
         } catch (SQLException e) {
@@ -133,22 +133,21 @@ public class DB {
 
     public String MakeJobs(String headline, String description, int salaryHour, String location){
         String insertSQL = "INSERT INTO Job(headline, description, salaryHour, location) VALUES (?,?,?,?,)";
-    try{
-        PreparedStatement preparedStatement = con.prepareStatement(insertSQL);
-        {
+        try{
+            PreparedStatement preparedStatement = con.prepareStatement(insertSQL);
+            {
 
-            preparedStatement.setString(1,headline);
-            preparedStatement.setString(2,description);
-            preparedStatement.setInt(3,salaryHour);
-            preparedStatement.setString(4, location);
+                preparedStatement.setString(1,headline);
+                preparedStatement.setString(2,description);
+                preparedStatement.setInt(3,salaryHour);
+                preparedStatement.setString(4, location);
 
+                int rowsAffected = preparedStatement.executeUpdate();
+                System.out.println("Rows inserted: " + rowsAffected);
+            }
 
-            int rowsAffected = preparedStatement.executeUpdate();
-            System.out.println("Rows inserted: " + rowsAffected);
-        }
-
-    }catch(SQLException e){
-        e.getMessage();
+        }catch(SQLException e){
+            e.getMessage();
         }
         return insertSQL;
     }
