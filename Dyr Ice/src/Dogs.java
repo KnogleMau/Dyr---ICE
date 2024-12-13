@@ -11,10 +11,10 @@ public Dogs(String species,int cost, int lifeSpan, String temper, String allergy
     }
 
 public String toString(){
-    return " species: " + this.species + ", " +
-            " cost: " + this.cost + ", " +
-            " lifespan: " + this.lifeSpan + ", " +
-            " temper: " + this.temper + ", " +
+    return " species: " + this.species + " ;" +
+            " cost: " + this.cost + " ;" +
+            " lifespan: " + this.lifeSpan + " ;" +
+            " temper: " + this.temper + " ;" +
             " allergyFriendly: " + this.AllergyFriendly;
     }
 }
