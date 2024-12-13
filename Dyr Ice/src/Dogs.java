@@ -1,7 +1,14 @@
 public class Dogs extends Animal {
-public Dogs(int id, String species, int cost, int lifeSpan, String temper, String allergyFriendly) {
-    super(id, species, cost, lifeSpan, temper, allergyFriendly);
+    protected int cost;
+public Dogs(int id, String species,int cost, int lifeSpan, String temper, String allergyFriendly) {
+    super(id, species, lifeSpan, temper, allergyFriendly);
+    this.cost = cost;
 }
+
+
+    public int getCost(){
+        return this.cost;
+    }
 
 public String toString(){
     return "id: " + this.id + ", " +
