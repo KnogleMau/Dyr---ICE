@@ -1,7 +1,7 @@
 public class Dogs extends Animal {
     protected int cost;
-public Dogs(int id, String species,int cost, int lifeSpan, String temper, String allergyFriendly) {
-    super(id, species, lifeSpan, temper, allergyFriendly);
+public Dogs(String species,int cost, int lifeSpan, String temper, String allergyFriendly) {
+    super(species, lifeSpan, temper, allergyFriendly);
     this.cost = cost;
 }
 
@@ -11,12 +11,10 @@ public Dogs(int id, String species,int cost, int lifeSpan, String temper, String
     }
 
 public String toString(){
-    return "id: " + this.id + ", " +
-            " species: " + this.species + ", " +
+    return " species: " + this.species + ", " +
             " cost: " + this.cost + ", " +
             " lifespan: " + this.lifeSpan + ", " +
             " temper: " + this.temper + ", " +
-            " allergyFriendly: " + this.AllergyFriendly +"!";
-
+            " allergyFriendly: " + this.AllergyFriendly;
     }
 }
