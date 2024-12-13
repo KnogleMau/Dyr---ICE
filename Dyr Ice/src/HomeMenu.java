@@ -98,12 +98,12 @@ public class HomeMenu {
                         Dogs d = new Dogs(species, cost, lifespan, temper, allergyFriendly);
                         this.dogs.add(d);
                     } catch (NumberFormatException e) {
-                        System.out.println("Fejl ved parsing af tal i linje: " + line);
+                        System.out.println("failed parsing in the line: ");
                     }
                 }
             }
         }
-        return null;
+        return dogs;
     }
 
     public void printDogsList() {
@@ -115,5 +115,4 @@ public class HomeMenu {
             System.out.println("no dogs shows");
         }
     }
-
 }

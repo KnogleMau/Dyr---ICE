@@ -15,7 +15,7 @@ public class DB {
 
     public ArrayList<String> selectCats() {
         ArrayList<String> data = new ArrayList<>();
-        String sql = "SELECT species, origin, lifeSpan, temper, AllergyFriendly FROM Cat";
+        String sql = "SELECT id, species, origin, lifeSpan, temper, AllergyFriendly FROM Cat";
 
         try {
             Statement stm = con.createStatement();
@@ -36,7 +36,7 @@ public class DB {
 
     public ArrayList<String> selectDogs() {
         ArrayList<String> dogData = new ArrayList<>();
-        String sql = "SELECT species, cost, lifespan, temper, AllergyFriendly FROM Dog";
+        String sql = "SELECT id, species, cost, lifespan, temper, AllergyFriendly FROM Dog";
 
         try {
             Statement stm = con.createStatement();
