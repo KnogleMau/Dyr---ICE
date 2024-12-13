@@ -90,7 +90,7 @@ public class HomeMenu {
                 if (parameters.length == 5) {
                     try {
                         String species = parameters[0].trim();
-                        int cost = Integer.parseInt(parameters[1].trim());
+                        String cost = parameters[1].trim();
                         int lifespan = Integer.parseInt(parameters[2].trim());
                         String temper = parameters[3].trim();
                         String allergyFriendly = parameters[4].trim();
