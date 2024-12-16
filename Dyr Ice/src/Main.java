@@ -23,5 +23,9 @@ public class Main {
       //  h.printCatList();
         Cats c = h.getCatBySpecies(ui.promptText("Hvilken cat vil du gerne søge på?"));
         System.out.println(c);
+
+        CreateName createName = new CreateName();
+        createName.createDogName();
+
     }
 }
