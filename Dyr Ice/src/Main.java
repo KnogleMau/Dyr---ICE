@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         TextUI ui = new TextUI();
-        //var url = "jdbc:sqlite:C:\\Users\\Mavso\\OneDrive\\Skrivebord\\Dyr---ICE\\Dyr Ice\\Fanimals";
+        var url = "jdbc:sqlite:C:\\Users\\jokau\\OneDrive\\Skrivebord\\ajp filer\\intellij\\Dyr---ICE\\Fanimals";
         //DB db1 = new DB();
         // db1.connect(url);
         // db1.checkLogIn("1","1");
@@ -17,15 +17,16 @@ public class Main {
         //System.out.println(data);
 
         //new GUI();
+
         HomeMenu h = new HomeMenu();
         ArrayList<String>catList = h.readCatsList();
         ArrayList<Cats> cats = h.createCatList(catList);
       //  h.printCatList();
         Cats c = h.getCatBySpecies(ui.promptText("Hvilken cat vil du gerne søge på?"));
         System.out.println(c);
-
+/*
         CreateName createName = new CreateName();
-        createName.createDogName();
+        createName.createDogName();*/
 
     }
 }

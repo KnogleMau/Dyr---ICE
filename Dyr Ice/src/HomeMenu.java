@@ -30,7 +30,7 @@ public class HomeMenu {
     }
 
     public ArrayList<String> readCatsList() {
-        var url = "jdbc:sqlite:C:\\Users\\Mavso\\IdeaProjects\\Dyr ice ice ice 2\\Fanimals";
+        var url = "jdbc:sqlite:C:\\Users\\jokau\\OneDrive\\Skrivebord\\ajp filer\\intellij\\Dyr---ICE\\Fanimals";
         db.connect(url);
         ArrayList<String> catList = db.selectCats();
 
@@ -75,7 +75,7 @@ public class HomeMenu {
     }
 
     public ArrayList<String> readDogsList(){
-        var url = "jdbc:sqlite:C:\\Users\\Mavso\\IdeaProjects\\Dyr ice ice ice 2\\Fanimals";
+        var url = "jdbc:sqlite:C:\\Users\\jokau\\OneDrive\\Skrivebord\\ajp filer\\intellij\\Dyr---ICE\\Fanimals";
         db.connect(url);
         ArrayList<String> dogsList = db.selectDogs();
         return dogsList;
