@@ -160,7 +160,7 @@ public class HomeMenu {
         return null;
     }
 
-    public Dogs getCatsByAllergy(String s){
+    public Dogs getCatsByAllergyFriendly(String s){
         for (Dogs c: dogs){
             if (c.getAllergyFriendly().equalsIgnoreCase(s)){
                 return c;
@@ -215,7 +215,7 @@ public class HomeMenu {
         return null;
     }
 
-    public Dogs getDogsByAllergy(String s){
+    public Dogs getDogsByAllergyFriendly(String s){
         for (Dogs c: dogs){
             if (c.getAllergyFriendly().equalsIgnoreCase(s)){
                 return c;
@@ -223,4 +223,5 @@ public class HomeMenu {
         }
         return null;
     }
+
 }
