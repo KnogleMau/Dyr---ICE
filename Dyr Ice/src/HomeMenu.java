@@ -48,7 +48,7 @@ public class HomeMenu {
                     try {
                         String species = parameters[0].trim();
                         String origin = parameters[1].trim();
-                        int lifespan = Integer.parseInt(parameters[2].trim());
+                        String lifespan = parameters[2].trim();
                         String temper = parameters[3].trim();
                         String allergyFriendly = parameters[4].trim();
 
@@ -92,7 +92,7 @@ public class HomeMenu {
                     try {
                         String species = parameters[0].trim();
                         String cost = parameters[1].trim();
-                        int lifespan = Integer.parseInt(parameters[2].trim());
+                        String lifespan = parameters[2].trim();
                         String temper = parameters[3].trim();
                         String allergyFriendly = parameters[4].trim();
 
@@ -124,5 +124,29 @@ public class HomeMenu {
             }
         } return null;
 
+    }
+    public Cats getCatsByTemper(String s){
+        String soeg = s;
+        for(int i = 0; i < cats.size(); i++)
+        {
+            if(((Cats) cats.get(i)).getTemper().contains(soeg))
+            {
+                System.out.println(cats.get(i));
+
+            }
+        }
+        return null;
+    }
+    public Cats getCatsByLifespan(String s){
+        String soeg = s;
+        for(int i = 0; i < cats.size(); i++)
+        {
+            if(((Cats) cats.get(i)).getLifeSpan().contains(soeg))
+            {
+                System.out.println(cats.get(i));
+
+            }
+        }
+        return null;
     }
 }

@@ -17,16 +17,18 @@ public class Main {
         //System.out.println(data);
 
         //new GUI();
-       /* HomeMenu h = new HomeMenu();
+        HomeMenu h = new HomeMenu();
         ArrayList<String>catList = h.readCatsList();
         ArrayList<Cats> cats = h.createCatList(catList);
       //  h.printCatList();
-        Cats c = h.getCatBySpecies(ui.promptText("Hvilken cat vil du gerne søge på?"));
-        System.out.println(c);
-*/
+      //  Cats c = h.getCatBySpecies(ui.promptText("Hvilken cat vil du gerne søge på?"));
 
-        CreateName createName = new CreateName();
-        createName.createDogName();
+        Cats c = h.getCatsByLifespan(ui.promptText("Søg efter Levetid?"));
+        System.out.println(c);
+
+
+       //CreateName createName = new CreateName();
+        //createName.createDogName();
 
     }
 }

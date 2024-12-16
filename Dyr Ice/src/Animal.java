@@ -2,12 +2,12 @@ import javax.lang.model.element.AnnotationMirror;
 
 public abstract class Animal {
     protected String species;
-    protected int lifeSpan;
+    protected String lifeSpan;
     protected String temper;
     protected String AllergyFriendly;
 
 
-    public Animal(String species,int lifeSpan,String temper,String allergyFriendly){
+    public Animal(String species,String lifeSpan,String temper,String allergyFriendly){
 
         this.species = species;
         this.lifeSpan = lifeSpan;
@@ -19,7 +19,7 @@ public abstract class Animal {
         return this.species;
     }
 
-    public int getLifeSpan(){
+    public String getLifeSpan(){
         return this.lifeSpan;
     }
 

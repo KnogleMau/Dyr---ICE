@@ -1,6 +1,6 @@
 public class Cats extends Animal {
     protected String origin;
-    public Cats(String species,String origin,int lifeSpan,String temper,String allergyFriendly){
+    public Cats(String species,String origin, String lifeSpan,String temper,String allergyFriendly){
         super(species,lifeSpan,temper,allergyFriendly);
         this.origin = origin;
     }

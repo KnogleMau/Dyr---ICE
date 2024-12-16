@@ -1,6 +1,6 @@
 public class Dogs extends Animal {
     protected String cost;
-public Dogs(String species,String cost, int lifeSpan, String temper, String allergyFriendly) {
+public Dogs(String species,String cost, String lifeSpan, String temper, String allergyFriendly) {
     super(species, lifeSpan, temper, allergyFriendly);
     this.cost = cost;
 }

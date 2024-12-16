@@ -5,7 +5,7 @@ CREATE TABLE Dog
     id integer primary key,
     species varchar(50) not null,
     cost INTEGER default 0,
-    lifespan INTEGER default 0,
+    lifespan varchar(20),
     temper text (100),
     allergyFriendly boolean not null
 
@@ -17,7 +17,7 @@ create table Cat
    id integer primary key,
    species varchar(50) not null ,
    origin varchar(50) not null,
-   lifeSpan integer not null,
+   lifeSpan varchar(20),
    temper text not null,
    allergyFriendly boolean not null
 );
