@@ -131,8 +131,8 @@ public class DB {
         return false;
     }
 
-    public String MakeJobs(String headline, String description, int salaryHour, String location){
-        String insertSQL = "INSERT INTO Job(headline, description, salaryHour, location) VALUES (?,?,?,?,)";
+    public void MakeJobs(String headline, String description, int salaryHour, String location){
+        String insertSQL = "INSERT INTO Job(headline, description, salaryHour, location) VALUES (?,?,?,?)";
         try{
             PreparedStatement preparedStatement = con.prepareStatement(insertSQL);
             {
@@ -149,7 +149,11 @@ public class DB {
         }catch(SQLException e){
             e.getMessage();
         }
-        return insertSQL;
+    }
+    public String readJobs(){
+
+
+        return null;
     }
     
 }
