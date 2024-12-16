@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 public class HomeMenu {
@@ -74,7 +75,7 @@ public class HomeMenu {
     }
 
     public ArrayList<String> readDogsList(){
-        var url = "jdbc:sqlite:/Users/petermarcher/Desktop/Java 1/Dyr---ICE/Untitled";
+        var url = "jdbc:sqlite:C:\\Users\\Mavso\\IdeaProjects\\Dyr ice ice ice 2\\Fanimals";
         db.connect(url);
         ArrayList<String> dogsList = db.selectDogs();
         return dogsList;
@@ -114,5 +115,14 @@ public class HomeMenu {
         } else {
             System.out.println("no dogs shows");
         }
+    }
+
+    public Cats getCatBySpecies(String s) {
+        for(Cats c : cats) {
+            if(c.getSpecies().equalsIgnoreCase(s)){
+                return c;
+            }
+        } return null;
+
     }
 }

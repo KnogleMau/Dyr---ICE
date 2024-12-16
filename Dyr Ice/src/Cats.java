@@ -9,6 +9,9 @@ public class Cats extends Animal {
         return this.origin;
     }
 
+    @Override
+    public String getSpecies(){return this.species;}
+
     public String toString() {
         return " Species: " + this.species + " ;" +
                 " Origin: " + this.origin + " ;" +

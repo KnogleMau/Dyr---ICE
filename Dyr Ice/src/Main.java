@@ -4,6 +4,7 @@ import java.util.ArrayList;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        TextUI ui = new TextUI();
         //var url = "jdbc:sqlite:C:\\Users\\Mavso\\OneDrive\\Skrivebord\\Dyr---ICE\\Dyr Ice\\Fanimals";
         //DB db1 = new DB();
         // db1.connect(url);
@@ -19,7 +20,8 @@ public class Main {
         HomeMenu h = new HomeMenu();
         ArrayList<String>catList = h.readCatsList();
         ArrayList<Cats> cats = h.createCatList(catList);
-        h.printCatList();
-
+      //  h.printCatList();
+        Cats c = h.getCatBySpecies(ui.promptText("Hvilken cat vil du gerne søge på?"));
+        System.out.println(c);
     }
 }
