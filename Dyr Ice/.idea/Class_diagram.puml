@@ -1,0 +1,138 @@
+@startuml
+'https://plantuml.com/class-diagram
+!pragma layout smetana
+
+abstract class Animal{
+#String species
+#String lifeSpan
+#String temper
+#String AllergyFriendly
++Animal(String species,String lifeSpan,String temper,String allergyFriendly)
++String getSpecies()
++String getLifeSpan()
++String getTemper()
++String getAllergyFriendly()
+}
+
+class Cats{
+#String origin
++Cats(String species,String origin, String lifeSpan,String temper,String allergyFriendly)
++String getOrigin()
++String getSpecies()
++String toString()
+}
+
+class CreateName{
+ArrayList<String> selectedCriterias
+ArrayList<DogMorfems> dogMorf
+ArrayList<DogMorfems> selectedDogMorf1
+ArrayList<DogMorfems> selectedDogMorf2
++int index
++void findMorfem(ArrayList<String> morfems)
++ArrayList<String> runCriteriaSelections(ArrayList<Integer> input)
++void createDogName()
++DogMorfems getDogMorf(int i)
+}
+
+class DB{
++void connect(String url)
++ArrayList<String> selectCats()
++ArrayList<String> selectDogs()
++String checkLogIn(String usernameInput, String passwordInput)
++String newUser(String username, String password)
++boolean isUserExisting(String username)
++void MakeJobs(String headline, String description, int salaryHour, String location)
+}
+
+class DogMofems{
+#String gender
+#String size
+#String nameCriteria
+#String morFem
++DogMorfems(String gender, String size, String nameCriteria, String morFem)
++String getGender()
++String getSize()
++String getNameCriteria()
++String getMorfem()
++String toString()
+}
+
+class Dogs{
+#String cost
++Dogs(String species,String cost, String lifeSpan, String temper, String allergyFriendly)
++String getCost()
++String toString()
+}
+
+class FileIO{
++ArrayList<String> morfemFileReader(String path)
+}
+
+class GUI{
+-HomeMenu HomeMenu
+-Login Login
+-JFrame frame
+-JFrame loginFrame
++GUI()
+-void GUIstart()
+-void GUIloginfailed()
++void actionPerformed(ActionEvent e)
+}
+
+class HomeMenu{
+-TextUI ui
+DB db
+ArrayList<Cats> cats
+ArrayList<Dogs> dogs
++void displayMenu()
++ArrayList<String> readCatsList()
++ArrayList<Cats> createCatList(ArrayList<String> catList)
++void printCatList()
++ArrayList<String> readDogsList()
++ArrayList<Dogs> createDogList(ArrayList<String> dogList)
++void printDogsList()
++Cats getCatsBySpecies(String s)
++Cats getCatsByOrigin(String s)
++Cats getCatsByLifeSpan(String s)
++Cats getCatsByTemper(String s)
++Cats getCatsByAllergyFriendly(String s)
++Dogs getDogsBySpecies(String s)
++Dogs getDogsByCost(String s)
++Dogs getDogsByLifespan(String s)
++Dogs getDogsByTemper(String s)
++Dogs getDogsByAllergyFriendly(String s)
+}
+
+class Jobs{
++String headLine
++String description
++int salaryHour
++String location
+TextUI ui
+DB db
++void createJobs()
+}
+
+class Login{
+DB db
+TextUI ui
++void loginOption()
++void createUser()
+}
+
+class StartMenu{
+TextUI ui
++void menu()
+}
+
+class TextUI{
+-Scanner scan
++void displayMsg(String msg)
++int promptNumeric(String msg)
++boolean promptBinary(String msg)
++ArrayList<Integer> promptNumericDogNameTraits(int choice)
++String selectSpecificTraits(String msg)
+}
+
+
+@enduml
