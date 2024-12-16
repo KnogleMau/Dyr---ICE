@@ -23,7 +23,7 @@ public class Main {
       //  h.printCatList();
       //  Cats c = h.getCatBySpecies(ui.promptText("Hvilken cat vil du gerne søge på?"));
 
-        Cats c = h.getCatsByLifespan(ui.promptText("Søg efter Levetid?"));
+        Cats c = h.getCatsByLifeSpan(ui.promptText("Søg efter Levetid?"));
         System.out.println(c);
 
 
