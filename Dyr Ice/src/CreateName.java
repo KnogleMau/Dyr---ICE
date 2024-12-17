@@ -95,10 +95,7 @@ public class CreateName {
                 selectedDogMorf2.add(d1);
             }
         }
-                       /* else
-                        {
-                            System.out.println("this morfem type doesn't exist");
-                        }*/
+
 
         int randomIndex1 = (int) (Math.random()*selectedDogMorf1.size());
         int randomIndex2 = (int) (Math.random()*selectedDogMorf2.size());
@@ -108,7 +105,10 @@ public class CreateName {
         dog1 = selectedDogMorf1.get(randomIndex1);
         dog2 = selectedDogMorf2.get(randomIndex2);
 
-        System.out.println(dog1.getMorfem() + dog2.getMorfem());
+        String dog2Name= dog2.getMorfem();
+        dog2Name.equalsIgnoreCase(dog2Name);
+
+        System.out.println(dog1.getMorfem() + " " + dog2Name);
 
     }
 
