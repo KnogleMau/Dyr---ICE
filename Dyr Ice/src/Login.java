@@ -1,23 +1,34 @@
+import java.sql.SQLOutput;
+
 public class Login {
 
     DB db = new DB();
     TextUI ui = new TextUI();
 
-
-    public void loginOption(String username, String password){
-        var url = "jdbc:sqlite:C:\\Users\\Mavso\\IdeaProjects\\Dyr ice ice ice 2\\Fanimals";
+    public boolean loginOption(String username, String password){
+        var url = "jdbc:sqlite:C:\\Users\\thran\\Desktop\\Datamatiker\\1.Semester\\Dyr---ICE\\Fanimals";
         db.connect(url);
 
-        db.checkLogIn(username, password);
+        boolean isLoggedIn = db.checkLogIn(username, password);
+        return isLoggedIn;
     }
 
     public void createUser(String username, String password) {
-        var url = "jdbc:sqlite:C:\\Users\\Mavso\\IdeaProjects\\Dyr ice ice ice 2\\Fanimals";
+        var url = "jdbc:sqlite:C:\\Users\\thran\\Desktop\\Datamatiker\\1.Semester\\Dyr---ICE\\Fanimals";
         db.connect(url);
 
 
         db.newUser(username, password);
 
     }
+    /*public boolean isUserReal(String username){
+
+        var url = "jdbc:sqlite:C:\\Users\\thran\\Desktop\\Datamatiker\\1.Semester\\Dyr---ICE\\Fanimals";
+        db.connect(url);
+
+       return !db.isUserExisting(username);-
+    }
+
+     */
 
 }

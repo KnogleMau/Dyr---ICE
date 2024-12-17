@@ -7,8 +7,20 @@ public class CreateName {
     ArrayList<DogMorfems> selectedDogMorf1 = new ArrayList<>();
     ArrayList<DogMorfems> selectedDogMorf2 = new ArrayList<>();
     public int index;
+    int inp1;
+    int inp2;
+    int inp3;
+    int inp4;
+    int inp5;
 
-    public /*ArrayList<MaleDogs> */ void findMorfem(ArrayList<String> morfems) {
+
+    String choice3;
+    String choice4;
+    String choice5;
+
+    String result= "1";
+
+    public void findMorfem(ArrayList<String> morfems) {
         //ArrayList<MaleDogs> dogMorf = new ArrayList<>();  rykket til klassens atributer for at andre metoder kan tilgå den
         try{
             for (String s : morfems) {
@@ -30,20 +42,56 @@ public class CreateName {
     public ArrayList<String> runCriteriaSelections(ArrayList<Integer> input) {
         selectedCriterias = new ArrayList<>();
         TextUI selectTrait = new TextUI();
-
+/*
         String genderVariable = Integer.toString(input.get(0)); //changes int genderChoise to a String
         selectedCriterias.add(genderVariable); //adds genderChoise to ArrayList
         String dogSizeVariable = Integer.toString(input.get(1));// changes int dogSizechoise to a String
-        selectedCriterias.add(dogSizeVariable); // adds dogSizechoise to ArrayList
+        selectedCriterias.add(dogSizeVariable); // adds dogSizechoise to ArrayList  */
+        //String genderVariable = Integer.toString()
 
-        Integer selectedCriteria = input.get(2);
-        int criteriaCombination = selectedCriteria;
 
+        String genderVariable =Integer.toString(input.get(0));
+        String dogSizeVariable =Integer.toString(input.get(1));
+        String selectTrait1 = Integer.toString((inp3));
+        String selectTrait2 = Integer.toString((inp4));
+        String selectTrait3 = Integer.toString((inp5));
+
+        selectedCriterias.add(genderVariable);
+        selectedCriterias.add(dogSizeVariable);
+
+        if(selectTrait1.equals(0))
+        {
+            selectedCriterias.add(selectTrait2);
+            selectedCriterias.add(selectTrait3);
+        }
+         else if(selectTrait2.equals(0))
+        {
+        selectedCriterias.add(selectTrait1);
+        selectedCriterias.add(selectTrait3);
+         }
+         else if(selectTrait3.equals(0))
+         {
+         selectedCriterias.add(selectTrait1);
+         selectedCriterias.add(selectTrait2);
+         }
+
+
+
+
+
+        //selectedCriterias.add(selectTrait2);
+       // selectedCriterias.add(selectTrait1);
+      //  selectedCriterias.add(selectTrait3);
+
+     // String critiriaType1 = criteriaNumberChoice1;
+        //String genderVariable =Integer.toString(input.get(2));
+        //int criteriaCombination = selectedCriteria;
+/*
         if (criteriaCombination == 1) {
             selectedCriterias.add(selectTrait.selectSpecificTraits("Please select one of the following genres:\n" +
                     "Royal: press [1]\nPredator: press [2]\nFantasy: press [3]\n" +
                     "Sport: press [4]\nFarm: press [5]\nAgillity: press [6]\nFamily: press [7]"));
-            selectedCriterias.add(selectTrait.selectSpecificTraits("Please select one of the following personallyties:\n" +
+            selectedCriterias.add(selectTrait.selectSpecificTraits("Please select one of the following personalyties:\n" +
                     "Extrovert: press [1]\nCalm: press [2]\nSneaky: press [3]\nClumpsy: press [4]"));
         } else if (criteriaCombination == 2) {
             selectedCriterias.add(selectTrait.selectSpecificTraits("Please select one of the following genres:\n" +
@@ -53,19 +101,19 @@ public class CreateName {
                     "Cool: press [1]\nMuscular: press [2]\nConfused: press [3]\nBlack: press [4]\n" +
                     "White: press [5]\nFurry: press [6]"));
         } else if (criteriaCombination == 3) {
-            selectedCriterias.add(selectTrait.selectSpecificTraits("Please select one of the following personallyties:\n" +
+            selectedCriterias.add(selectTrait.selectSpecificTraits("Please select one of the following personalyties:\n" +
                     "Extrovert: press [1]\nCalm: press [2]\nSneaky: press [3]\nClumpsy: press [4]"));
             selectedCriterias.add(selectTrait.selectSpecificTraits("Please select one of the following appearances:\n" +
                     "Cool: press [1]\nMuscular: press [2]\nConfused: press [3]\nBlack: press [4]\n" +
                     "White: press [5]\nFurry: press [6]"));
-        }
+        }*/
         return selectedCriterias;
     }
 
 
-    public void createDogName() {
+    public void createDogName(int inp1, int inp2) {
         FileIO file = new FileIO();
-        findMorfem(file.morfemFileReader("\\Users\\jokau\\OneDrive\\Skrivebord\\ajp filer\\intellij\\Dyr---ICE\\Dyr Ice\\anyMorfem.txt"));
+        findMorfem(file.morfemFileReader("C:\\Users\\thran\\Desktop\\Datamatiker\\1.Semester\\Dyr---ICE\\Dyr Ice\\anyMorfem.txt"));
 
         TextUI textUI = new TextUI();
         runCriteriaSelections(textUI.promptNumericDogNameTraits(1));
@@ -95,10 +143,7 @@ public class CreateName {
                 selectedDogMorf2.add(d1);
             }
         }
-                       /* else
-                        {
-                            System.out.println("this morfem type doesn't exist");
-                        }*/
+
 
         int randomIndex1 = (int) (Math.random()*selectedDogMorf1.size());
         int randomIndex2 = (int) (Math.random()*selectedDogMorf2.size());
@@ -108,13 +153,18 @@ public class CreateName {
         dog1 = selectedDogMorf1.get(randomIndex1);
         dog2 = selectedDogMorf2.get(randomIndex2);
 
-        System.out.println(dog1.getMorfem() + dog2.getMorfem());
+        String dog2Name= dog2.getMorfem();
+        dog2Name.equalsIgnoreCase(dog2Name);
+        result = dog1.getMorfem() + dog2Name;
+
+
+        System.out.println(dog1.getMorfem() + " " + dog2Name);
 
     }
-
+/*
     public DogMorfems getDogMorf(int i)
     {
         return dogMorf.get(i);
-    }
+    }  */
 
 }

@@ -7,30 +7,37 @@ public class HomeMenu {
     public ArrayList<Cats> cats;
     public ArrayList<Dogs> dogs;
 
-    public void displayMenu() {
-        int choice = ui.promptNumeric("Type a number:");
+    public String displaySearchMenu(String choice, String input2) {
+        HomeMenu h = new HomeMenu();
+        ArrayList<String> dogList = h.readDogsList();
+        h.createDogList(dogList);
+        String result = "";
 
-        switch (choice) {
-            case 1:
-                // search methods
+        switch(choice) {
+            case "1":
+                 result = String.valueOf(getDogsBySpecies(input2));
+
                 break;
-            case 2:
-                // jobs.method
+
+            case "2":
+                result = String.valueOf(getDogsByLifespan(input2));
                 break;
-            case 3:
-                // profile
+
+            case "3":
+                result = String.valueOf(getDogsByTemper(input2));
                 break;
-            case 4:
-                //logout
+
+            case "4":
+                result = String.valueOf(getDogsByAllergy(input2));
                 break;
             default:
-                System.out.println("invalid, type a number");
-                displayMenu();
+                result = "Ugyldigt valg.";
         }
+        return result;
     }
 
     public ArrayList<String> readCatsList() {
-        var url = "jdbc:sqlite:identifier.sqlite";
+        var url = "jdbc:sqlite:C:\\Users\\thran\\Desktop\\Datamatiker\\1.Semester\\Dyr---ICE\\Fanimals";
         db.connect(url);
         ArrayList<String> catList = db.selectCats();
 
@@ -42,8 +49,8 @@ public class HomeMenu {
         for (int i = 0; i < catList.size(); i++) {
             String line = catList.get(i);
 
-            if (!line.isEmpty() && line.contains(";")) {
-                String[] parameters = line.split(";");
+            if (!line.isEmpty() && line.contains(":")) {
+                String[] parameters = line.split(":");
                 if (parameters.length == 5) {
                     try {
                         String species = parameters[0].trim();
@@ -60,7 +67,7 @@ public class HomeMenu {
                 }
             }
         }
-        return null;
+        return cats;
     }
 
     public void printCatList() {
@@ -75,10 +82,10 @@ public class HomeMenu {
     }
 
     public ArrayList<String> readDogsList(){
-        var url = "jdbc:sqlite:identifier.sqlite";
+        var url = "jdbc:sqlite:C:\\Users\\thran\\Desktop\\Datamatiker\\1.Semester\\Dyr---ICE\\Fanimals";
         db.connect(url);
-        ArrayList<String> dogsList = db.selectDogs();
-        return dogsList;
+        ArrayList<String> dogList = db.selectDogs();
+        return dogList;
     }
 
     public ArrayList<Dogs> createDogList(ArrayList<String> dogList) {
@@ -86,8 +93,8 @@ public class HomeMenu {
         for (int i = 0; i < dogList.size(); i++) {
             String line = dogList.get(i);
 
-            if (!line.isEmpty() && line.contains(";")) {
-                String[] parameters = line.split(";");
+            if (!line.isEmpty() && line.contains(" , ")) {
+                String[] parameters = line.split(" , ");
                 if (parameters.length == 5) {
                     try {
                         String species = parameters[0].trim();
@@ -111,6 +118,7 @@ public class HomeMenu {
         if (!dogs.isEmpty()) {
             for (Dogs d : dogs) {
                 System.out.println(d);
+
             }
         } else {
             System.out.println("no dogs shows");

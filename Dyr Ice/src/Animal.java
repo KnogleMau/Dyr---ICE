@@ -2,17 +2,17 @@ import javax.lang.model.element.AnnotationMirror;
 
 public abstract class Animal {
     protected String species;
-    protected String lifeSpan;
+    protected String lifespan;
     protected String temper;
-    protected String AllergyFriendly;
+    protected String allergyFriendly;
 
 
-    public Animal(String species,String lifeSpan,String temper,String allergyFriendly){
+    public Animal(String species,String lifespan,String temper,String allergyFriendly){
 
         this.species = species;
-        this.lifeSpan = lifeSpan;
+        this.lifespan = lifespan;
         this.temper = temper;
-        this.AllergyFriendly = allergyFriendly;
+        this.allergyFriendly = allergyFriendly;
     }
 
     public String getSpecies(){
@@ -20,7 +20,7 @@ public abstract class Animal {
     }
 
     public String getLifeSpan(){
-        return this.lifeSpan;
+        return this.lifespan;
     }
 
     public String getTemper(){
@@ -28,7 +28,7 @@ public abstract class Animal {
     }
 
     public String getAllergyFriendly(){
-        return this.AllergyFriendly;
+        return this.allergyFriendly;
     }
 
 }

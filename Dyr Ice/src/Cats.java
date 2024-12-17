@@ -1,7 +1,7 @@
 public class Cats extends Animal {
     protected String origin;
-    public Cats(String species,String origin, String lifeSpan,String temper,String allergyFriendly){
-        super(species,lifeSpan,temper,allergyFriendly);
+    public Cats(String species,String origin, String lifespan,String temper,String allergyFriendly){
+        super(species,lifespan,temper,allergyFriendly);
         this.origin = origin;
     }
 
@@ -13,10 +13,10 @@ public class Cats extends Animal {
     public String getSpecies(){return this.species;}
 
     public String toString() {
-        return " Species: " + this.species + " ;" +
-                " Origin: " + this.origin + " ;" +
-                " LifeSpan: " + this.lifeSpan + " ;" +
-                " Temper: " + this.temper + " ;" +
-                " AllergyFriendly: " + this.AllergyFriendly;
+        return " Species: " + this.species + " ||| " +
+                " Origin: " + this.origin + " ||| " +
+                " LifeSpan: " + this.lifespan + " ||| " +
+                " Temper: " + this.temper + " ||| " +
+                " AllergyFriendly: " + this.allergyFriendly;
     }
 }

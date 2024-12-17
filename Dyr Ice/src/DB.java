@@ -38,7 +38,7 @@ public class DB {
 
     public ArrayList<String> selectCats() {
         ArrayList<String> data = new ArrayList<>();
-        String sql = "SELECT id, species, origin, lifeSpan, temper, AllergyFriendly FROM Cat";
+        String sql = "SELECT species, origin, lifeSpan, temper, AllergyFriendly FROM Cat";
 
         try {
             Statement stm = con.createStatement();
@@ -60,8 +60,8 @@ public class DB {
 
 
     public ArrayList<String> selectDogs() {
-        ArrayList<String> dogData = new ArrayList<>();
-        String sql = "SELECT id, species, cost, lifespan, temper, AllergyFriendly FROM Dog";
+        ArrayList<String> data = new ArrayList<>();
+        String sql = "SELECT species, cost, lifespan, temper, AllergyFriendly FROM Dog";
 
         try {
             Statement stm = con.createStatement();
@@ -69,22 +69,19 @@ public class DB {
             ResultSet rs = stm.executeQuery(sql);
 
             while (rs.next()) {
-                String row = rs.getInt("id") + " , " + rs.getString("species") + " , " +
+                String row = rs.getString("species") + " , " +
                         rs.getString("cost") + " , " + rs.getInt("lifespan") + " , " +
                         rs.getString("temper") + " , " + rs.getString("AllergyFriendly");
-                dogData.add(row);
+                //System.out.println("Adding row: " + row);
+                data.add(row);
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        return dogData;
+        return data;
     }
 
-    public String checkLogIn(String usernameInput, String passwordInput) {
-        if (isUserExisting(usernameInput)) {
-            System.out.println("Brugernavnet " + usernameInput + " er allerede taget. Vælg venligst et andet.");
-            return "Username already taken";
-        }
+    public boolean checkLogIn(String usernameInput, String passwordInput) {
         String sql = "SELECT username, password FROM Login";
 
 
@@ -97,19 +94,18 @@ public class DB {
                 String passwordTarget = rs.getString("password");
                 if (usernameInput.equals(userTarget)) {
                     if (passwordInput.equals(passwordTarget)) {
-                        System.out.println("Login Succesful");
-                        return "Login Vellykket";
+
+                        return true;
                     } else {
-                        System.out.println("Login failed");
-                        return "Wrong password";
+
+                        return false;
                     }
                 }
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-            return "Login failed";
         }
-        return sql;
+        return false;
     }
 
     public String newUser(String username, String password) {
@@ -139,6 +135,7 @@ public class DB {
     }
 
     public boolean isUserExisting(String username) {
+        String password = "";
         String sql = "SELECT username FROM LogIn WHERE username = ?";
 
         try {
