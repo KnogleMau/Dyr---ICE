@@ -11,22 +11,25 @@ public class Main {
         // db1.checkLogIn("1","1");
         //db1.newUser("3","3");
         // Login l = new Login();
-        //  l.createUser();
+        // l.createUser();
 
         //ArrayList<String> data = db1.selectCats();
         //System.out.println(data);
 
-        //new GUI();
-        HomeMenu h = new HomeMenu();
+        new GUI();
+       /* HomeMenu h = new HomeMenu();
         ArrayList<String>catList = h.readCatsList();
         ArrayList<Cats> cats = h.createCatList(catList);
       //  h.printCatList();
       //  Cats c = h.getCatBySpecies(ui.promptText("Hvilken cat vil du gerne søge på?"));
 
-        Cats c = h.getCatsByLifeSpan(ui.promptText("Søg efter Levetid?"));
+        Cats c = h.getCatsByTemper(ui.promptText("Søg efter Temper?"));
         System.out.println(c);
 
+*/
 
+      //  Jobs j = new Jobs();
+        //j.createJobs();
        //CreateName createName = new CreateName();
         //createName.createDogName();
 

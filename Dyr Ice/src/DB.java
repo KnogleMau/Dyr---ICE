@@ -81,7 +81,10 @@ public class DB {
     }
 
     public String checkLogIn(String usernameInput, String passwordInput) {
-
+        if (isUserExisting(usernameInput)) {
+            System.out.println("Brugernavnet " + usernameInput + " er allerede taget. Vælg venligst et andet.");
+            return "Username already taken";
+        }
         String sql = "SELECT username, password FROM Login";
 
 
