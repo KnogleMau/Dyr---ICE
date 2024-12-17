@@ -13,6 +13,29 @@ public class DB {
         }
     }
 
+    public ArrayList<String> selectJobs(){
+        ArrayList<String> jobsData = new ArrayList<>();
+        String sql = "SELECT id, headline, description, salaryHour, location, username, takerName FROM Job";
+
+        try{
+            Statement stm = con.createStatement();
+            ResultSet rs = stm.executeQuery(sql);
+
+            while (rs.next()){
+                String rows = rs.getString("headline") + ": " +
+                        rs.getString("description") + ": " + rs.getInt("salaryHour") + ": " +
+                        rs.getString("location") + ": " + rs.getString("username") + ": " +
+                        rs.getString("takerName");
+                jobsData.add(rows);
+            }
+
+        } catch(SQLException e){
+            System.out.println(e.getMessage());
+        }
+        return jobsData;
+    }
+
+
     public ArrayList<String> selectCats() {
         ArrayList<String> data = new ArrayList<>();
         String sql = "SELECT id, species, origin, lifeSpan, temper, AllergyFriendly FROM Cat";
@@ -23,9 +46,9 @@ public class DB {
             ResultSet rs = stm.executeQuery(sql);
 
             while (rs.next()) {
-                String row =  rs.getString("species") + " ; " +
-                        rs.getString("origin") + " ; " + rs.getInt("lifeSpan") + " ; " +
-                        rs.getString("temper") + " ; " + rs.getString("AllergyFriendly");
+                String row =  rs.getString("species") + ": " +
+                        rs.getString("origin") + ": " + rs.getInt("lifeSpan") + ": " +
+                        rs.getString("temper") + ": " + rs.getString("AllergyFriendly");
                 data.add(row);
             }
         } catch (SQLException e) {
@@ -33,6 +56,8 @@ public class DB {
         }
         return data;
     }
+
+
 
     public ArrayList<String> selectDogs() {
         ArrayList<String> dogData = new ArrayList<>();
@@ -155,7 +180,6 @@ public class DB {
 
         return null;
     }
-    
 }
 
 
