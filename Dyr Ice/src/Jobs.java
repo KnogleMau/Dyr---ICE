@@ -9,7 +9,7 @@ public class Jobs {
     DB db = new DB();
 
     public ArrayList<String> readJobs() {
-        var url = "jdbc:sqlite:identifier.sqlite";
+        var url = "jdbc:sqlite:C:\\Users\\Mavso\\IdeaProjects\\LORTEPROJEKT\\Animals";
         db.connect(url);
         ArrayList<String> jobs = db.selectJobs();
 
@@ -17,7 +17,7 @@ public class Jobs {
     }
 
     public void createJobs() {
-        var url = "jdbc:sqlite:identifier.sqlite";
+        var url = "jdbc:sqlite:C:\\Users\\Mavso\\IdeaProjects\\LORTEPROJEKT\\Animals";
         db.connect(url);
 
         String mHeadLine = ui.promptText("Headline");

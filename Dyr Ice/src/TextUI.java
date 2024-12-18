@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class TextUI {
     private Scanner scan = new Scanner(System.in);
+    CreateName rerunTypeError = new CreateName();
 
     public void displayMsg(String msg){
         System.out.println(msg);
@@ -57,10 +58,12 @@ public class TextUI {
                     if(dogGender == 1 || dogGender == 2)
                     {
                         choice = 2;
-                        // input.add(dogGender);  // skal måske sikre at den kun adder til index 0
+                        input.add(dogGender);  // skal måske sikre at den kun adder til index 0
                     } else  {
                         System.out.println("Please type: [1] or [2] to continue");
                         promptNumericDogNameTraits(1);
+                        // dogGender = 1;
+                        //input.add(dogGender);
                         choice = 4;
                     }
                 } catch (NumberFormatException e) {
@@ -76,11 +79,13 @@ public class TextUI {
                     if(dogSize == 1 || dogSize == 2)
                     {
                         choice = 2;
-                        // input.add(dogSize);  // skal måske sikre at den kun adder til index 1
+                        input.add(dogSize);  // skal måske sikre at den kun adder til index 1
                     }
                     else  {
                         System.out.println("Please type: [1] or [2] to continue");
                         promptNumericDogNameTraits(2);
+                        // dogSize =1;
+                        // input.add(dogSize);
                         choice = 4;
                     }
 
@@ -102,13 +107,16 @@ public class TextUI {
                     if(nameType >= 1 && nameType <= 3)
                     {
                         choice =4;
+                        input.add(nameType);
 
                         //  input.add(nameType);  // skal måske sikre at den kun adder til index 2
                     }
                     else {
 
                         System.out.println("You can only press: [1], [2] or [3]");
-                        promptNumericDogNameTraits(3);
+                        //  promptNumericDogNameTraits(3);
+                        nameType= 1;
+                        input.add(nameType);
                         choice = 4;
                     }
                 }
@@ -132,29 +140,56 @@ public class TextUI {
         int trait =0;
         System.out.println(msg);
         String userChoice = scan.nextLine();
+
+        String [] mistypes = {"a","A","b","B","c","C","d","D","e","E","f","g","G","h","H","i","I",
+                "j","J", "k","K","l","M","n","N","o","O","p","P","q","Q","r","R","s","S","t","T","u","U",
+                "v","V","y","Y","x","X","z","Z","æ","Æ","ø","Ø","å","Å",",",".","<","/","*","-","+","!","@",
+                "£","€","&","%","¤","#","(",")","=","?","`","[","]","{","}","_","-",";",":"};
+        for(String m: mistypes) {
+            if(userChoice.contains(m))
+            {
+                userChoice ="";
+                System.out.println(msg);
+                userChoice = scan.nextLine();
+            }
+        }
+
         int traitChoice = Integer.parseInt(userChoice);
 
-        if (msg.contains("genres")){
+
+        if (msg.contains("genres")) {
             trait = 1;
-            if(traitChoice < 1 || traitChoice > 7){
-                System.out.println("select a number between 1 and 7");
-                selectSpecificTraits(msg);
+            if (traitChoice < 1 || traitChoice > 7 ) {
+                // traitChoice = 5;   til gui uden fejl
+                // System.out.println("select a number between 1 and 7");  passer kun med selectSpecificTraits(msg);
+
+                rerunTypeError.createDogName();
+                // System.out.println("Type one to exit to Home Menu\n");
+                // metodekald til homeMenu på at genkøre koden ved tastefejl
+                //   selectSpecificTraits(msg);   første forsøg
             }
-        }
-        else if(msg.contains("personallyties")){
+        } else if (msg.contains("personalyties")) {
             trait = 2;
-            if(traitChoice < 1 || traitChoice > 7){
-                System.out.println("select a number between 1 and 4");
-                selectSpecificTraits(msg);
+            if (traitChoice < 1 || traitChoice > 7) {
+
+                //System.out.println("select a number between 1 and 4");
+
+                rerunTypeError.createDogName();
+                //  selectSpecificTraits(msg);
+                // traitChoice = 4;  gui nem version uden mulighed for at gengøre metoder efter forkerte bruger inputs
             }
-        }
-        else if(msg.contains("appearances")) {
+        } else if (msg.contains("appearances")) {
             trait = 3;
             if (traitChoice < 1 || traitChoice > 6) {
+
                 System.out.println("select a number between 1 and 6");
-                selectSpecificTraits(msg);
+                rerunTypeError.createDogName();
+                //  selectSpecificTraits(msg);
+                //traitChoice = 3;  til gui som ikke man køres korrekt efter fejl tast fra brugeren
+
             }
         }
+
 
         switch(traitChoice){
             case 1: if(trait == 1){
@@ -166,6 +201,7 @@ public class TextUI {
             else if (trait == 3){
                 selectedTrait = "cool";
             }
+                break;
             case 2:
                 if (trait == 1) {
                     selectedTrait = "predator";
@@ -176,6 +212,7 @@ public class TextUI {
                 else if (trait == 3){
                     selectedTrait = "muscular";
                 }
+                break;
             case 3:
                 if (trait == 1) {
                     selectedTrait = "fantasy";
@@ -186,6 +223,7 @@ public class TextUI {
                 else if (trait == 3){
                     selectedTrait = "confused";
                 }
+                break;
             case 4:
                 if (trait == 1) {
                     selectedTrait = "sport";
@@ -196,6 +234,7 @@ public class TextUI {
                 else if (trait == 3){
                     selectedTrait = "black";
                 }
+                break;
             case 5:
                 if (trait == 1) {
                     selectedTrait = "farm";
@@ -203,6 +242,7 @@ public class TextUI {
                 else if (trait == 3){
                     selectedTrait = "white";
                 }
+                break;
             case 6:
                 if (trait == 1) {
                     selectedTrait = "agillity";
@@ -210,6 +250,7 @@ public class TextUI {
                 else if (trait == 3){
                     selectedTrait = "furry";
                 }
+                break;
             case 7:
                 if (trait == 1) {
                     selectedTrait = "family";

@@ -22,9 +22,9 @@ public class DB {
             ResultSet rs = stm.executeQuery(sql);
 
             while (rs.next()){
-                String rows = rs.getString("headline") + ": " +
-                        rs.getString("description") + ": " + rs.getInt("salaryHour") + ": " +
-                        rs.getString("location") + ": " + rs.getString("username") + ": " +
+                String rows = rs.getString("headline") + " , " +
+                        rs.getString("description") + " , " + rs.getInt("salaryHour") + " , " +
+                        rs.getString("location") + " , " + rs.getString("username") + " , " +
                         rs.getString("takerName");
                 jobsData.add(rows);
             }

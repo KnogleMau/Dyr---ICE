@@ -691,9 +691,9 @@ public class GUI implements ActionListener {
              inp3 = criteriaNumberChoice1;
              inp4 = criteriaNumberChoice2;
              inp5 = criteriaNumberChoice3;
-            createName.createDogName(inp1, inp2 );
+           // createName.createDogName(inp1, inp2 );
 
-            System.out.println(createName.result);
+            //System.out.println(createName.result);
 
 
         }//ends if-statement

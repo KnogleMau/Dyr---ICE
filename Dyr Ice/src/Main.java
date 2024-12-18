@@ -6,45 +6,47 @@ public class Main {
     public static void main(String[] args) {
         TextUI ui = new TextUI();
 
-        new GUI();
+       new GUI();
 
-        //HomeMenu h = new HomeMenu();
-        //ArrayList<String>dogList = h.readDogsList();
-        //h.createDogList(dogList);
+        StartMenu m = new StartMenu();
 
-        //h.getDogsByTemper(ui.promptText("Søg temper"));
-
-        //h.printDogsList();
-        //var url = "jdbc:sqlite:C:\\Users\\thran\\Desktop\\Datamatiker\\1.Semester\\Dyr---ICE\\Fanimals";
-        //DB db1 = new DB();
-        //db1.connect(url);
-
-        // db1.checkLogIn("1","1");
-        //db1.newUser("3","3");
-        // Login l = new Login();
-        // l.createUser();
-
-        //ArrayList<String> data = db1.selectCats();
-        //System.out.println(data);
+        String input = ui.promptText("""
+                
+                1. Søg på Cat
+                
+                2. Søg på Dog
+                
+                3. Lav et random navn til hunde eller katte
+                
+                
+                """);
 
 
+        switch(input) {
+            case "1":
+            m.catMenu();
+            break;
 
-        /*ArrayList<String>catList = h.readCatsList();
-        h.createCatList(catList);
-        h.printCatList();*/
+            case "2":
+            m.DogMenu();
+            break;
+
+            case "3":
+            CreateName createName = new CreateName();
+            createName.createDogName();
+            break;
+
+            default:
+        }
+        }
 
 
-      //  Cats c = h.getCatBySpecies(ui.promptText("Hvilken cat vil du gerne søge på?"));
-
-        //Cats c = h.getCatsByTemper(ui.promptText("Søg efter Temper?"));
-        //System.out.println(c);
 
 
 
       //  Jobs j = new Jobs();
         //j.createJobs();
-       CreateName createName = new CreateName();
-        createName.createDogName(createName.inp1, createName.inp2);
+      // CreateName createName = new CreateName();
+        //createName.createDogName(createName.inp1, createName.inp2);
 
     }
-}

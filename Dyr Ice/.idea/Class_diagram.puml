@@ -120,10 +120,6 @@ TextUI ui
 +void createUser()
 }
 
-class StartMenu{
-TextUI ui
-+void menu()
-}
 
 class TextUI{
 -Scanner scan
@@ -133,6 +129,15 @@ class TextUI{
 +ArrayList<Integer> promptNumericDogNameTraits(int choice)
 +String selectSpecificTraits(String msg)
 }
-
+GUI *-- Login
+Login *-- HomeMenu
+HomeMenu *-- Animal
+HomeMenu *-- Jobs
+HomeMenu *-- AnimalNames
+HomeMenu *-- DB
+Animal <|-- Dogs
+Animal <|-- Cats
+HomeMenu *-- CreateName
+CreateName *-- DogMofems
 
 @enduml

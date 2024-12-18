@@ -37,10 +37,9 @@ public class HomeMenu {
     }
 
     public ArrayList<String> readCatsList() {
-        var url = "jdbc:sqlite:C:\\Users\\thran\\Desktop\\Datamatiker\\1.Semester\\Dyr---ICE\\Fanimals";
+        var url = "jdbc:sqlite:C:\\Users\\Mavso\\IdeaProjects\\LORTEPROJEKT\\Animals";
         db.connect(url);
         ArrayList<String> catList = db.selectCats();
-
         return catList;
     }
 
@@ -49,8 +48,8 @@ public class HomeMenu {
         for (int i = 0; i < catList.size(); i++) {
             String line = catList.get(i);
 
-            if (!line.isEmpty() && line.contains(":")) {
-                String[] parameters = line.split(":");
+            if (!line.isEmpty() && line.contains(", ")) {
+                String[] parameters = line.split(" , ");
                 if (parameters.length == 5) {
                     try {
                         String species = parameters[0].trim();
@@ -82,7 +81,7 @@ public class HomeMenu {
     }
 
     public ArrayList<String> readDogsList(){
-        var url = "jdbc:sqlite:C:\\Users\\thran\\Desktop\\Datamatiker\\1.Semester\\Dyr---ICE\\Fanimals";
+        var url = "jdbc:sqlite:C:\\Users\\Mavso\\IdeaProjects\\LORTEPROJEKT\\Animals";
         db.connect(url);
         ArrayList<String> dogList = db.selectDogs();
         return dogList;
@@ -129,10 +128,12 @@ public class HomeMenu {
     public Cats getCatsBySpecies(String s) {
         for(Cats c : cats) {
             if(c.getSpecies().equalsIgnoreCase(s)){
+
                 return c;
             }
         } return null;
     }
+
 
     public Cats getCatsByOrigin(String s) {
         for(Cats c : cats) {
@@ -159,7 +160,7 @@ public class HomeMenu {
         String soeg = s;
         for(int i = 0; i < cats.size(); i++)
         {
-            if(((Cats) cats.get(i)).getTemper().contains(soeg))
+            if(((Cats) cats.get(i)).getTemper().toLowerCase().contains(soeg))
             {
                 System.out.println(cats.get(i));
 
@@ -168,10 +169,14 @@ public class HomeMenu {
         return null;
     }
 
-    public Dogs getCatsByAllergy(String s){
-        for (Dogs c: dogs){
-            if (c.getAllergyFriendly().equalsIgnoreCase(s)){
-                return c;
+    public Cats getCatsByAllergyfriendly(String s){
+        String soeg = s;
+        for(int i = 0; i < cats.size(); i++)
+        {
+            if(((Cats) cats.get(i)).getAllergyFriendly().toLowerCase().contains(soeg))
+            {
+                System.out.println(cats.get(i));
+
             }
         }
         return null;
@@ -214,7 +219,7 @@ public class HomeMenu {
         String soeg = s;
         for(int i = 0; i < dogs.size(); i++)
         {
-            if(((Dogs) dogs.get(i)).getTemper().contains(soeg))
+            if(((Dogs) dogs.get(i)).getTemper().toLowerCase().contains(soeg))
             {
                 System.out.println(dogs.get(i));
 
